@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "Image.h"
+#include "include/Image.h"
 #include <iostream>
 #include <fstream>
 using namespace std;

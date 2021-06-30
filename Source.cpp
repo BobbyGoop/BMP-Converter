@@ -1,11 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <locale>
-#include "Image.h"
+#include "include/Image.h"
 #include <iostream>
+
 
 int main(void)
 {
-	setlocale(LC_ALL, "Russian");
+	//setlocale(LC_ALL, "Russian");
+	system("chcp 65001");
 	Image* source_1 = new Image((char*)"sunlight_32.bmp");
 	
 	/*Image * source_2 = new Image();
