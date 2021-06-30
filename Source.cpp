@@ -15,48 +15,48 @@ int main(void)
 	Image* image_reduced = new Image(0, source_1->getBitDepth(), 240, 135);
 	Image image_1, image_4, image_8;
 
-	std::cout << " Óâåëè÷åíèå ðàçìåðîâ èçîáðàæåíèÿ ... ";
+	std::cout << " Ð£Ð²ÐµÐ»Ð¸Ñ‡ÐµÐ½Ð¸Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð¾Ð² Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ ... ";
 	(*image_reduced) /= *source_1;
-	std::cout << "\t\tÓñïåõ!" << std::endl;
+	std::cout << "\t\tÐ£ÑÐ¿ÐµÑ…!" << std::endl;
 	
-	std::cout << " Óìåíüøåíèå ðàçìåðîâ èçîáðàæåíèÿ ... ";
+	std::cout << " Ð£Ð¼ÐµÐ½ÑŒÑˆÐµÐ½Ð¸Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð¾Ð² Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ ... ";
 	(*image_increased) /= *source_1;
-	std::cout << "\t\tÓñïåõ! " << std::endl;
+	std::cout << "\t\tÐ£ÑÐ¿ÐµÑ…! " << std::endl;
 
-	std::cout << " Ïîíèæåíèå áèòîâîé ãëóáèíû äî 1 ...";
+	std::cout << " ÐŸÐ¾Ð½Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ð±Ð¸Ñ‚Ð¾Ð²Ð¾Ð¹ Ð³Ð»ÑƒÐ±Ð¸Ð½Ñ‹ Ð´Ð¾ 1 ...";
 	image_1 = *source_1 / 1;
-	std::cout << "\t\tÓñïåõ! " << std::endl;
+	std::cout << "\t\tÐ£ÑÐ¿ÐµÑ…! " << std::endl;
 	
-	std::cout << " Ïîíèæåíèå áèòîâîé ãëóáèíû äî 4 ...";
+	std::cout << " ÐŸÐ¾Ð½Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ð±Ð¸Ñ‚Ð¾Ð²Ð¾Ð¹ Ð³Ð»ÑƒÐ±Ð¸Ð½Ñ‹ Ð´Ð¾ 4 ...";
 	image_4 = *source_1 / 4;
-	std::cout << "\t\tÓñïåõ! " << std::endl;
+	std::cout << "\t\tÐ£ÑÐ¿ÐµÑ…! " << std::endl;
 
-	std::cout << " Ïîíèæåíèå áèòîâîé ãëóáèíû äî 8  ...";
+	std::cout << " ÐŸÐ¾Ð½Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ð±Ð¸Ñ‚Ð¾Ð²Ð¾Ð¹ Ð³Ð»ÑƒÐ±Ð¸Ð½Ñ‹ Ð´Ð¾ 8  ...";
 	image_8 = *source_1 / 8;
-	std::cout << "\t\tÓñïåõ! " << std::endl;
+	std::cout << "\t\tÐ£ÑÐ¿ÐµÑ…! " << std::endl;
 
 
-	std::cout << " Ñîõðàíåíèå ôàéëà ñ ãëóáèíîé öâåòà 1 áèò ... ";
+	std::cout << " Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ñ„Ð°Ð¹Ð»Ð° Ñ Ð³Ð»ÑƒÐ±Ð¸Ð½Ð¾Ð¹ Ñ†Ð²ÐµÑ‚Ð° 1 Ð±Ð¸Ñ‚ ... ";
 	image_1.writeimage((char*)"sample_1.bmp");
-	std::cout << "\tÓñïåõ! " << std::endl;
+	std::cout << "\tÐ£ÑÐ¿ÐµÑ…! " << std::endl;
 
-	std::cout << " Ñîõðàíåíèå ôàéëà ñ ãëóáèíîé öâåòà 4 áèò ... ";
+	std::cout << " Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ñ„Ð°Ð¹Ð»Ð° Ñ Ð³Ð»ÑƒÐ±Ð¸Ð½Ð¾Ð¹ Ñ†Ð²ÐµÑ‚Ð° 4 Ð±Ð¸Ñ‚ ... ";
 	image_4.writeimage((char*)"sample_4.bmp");
-	std::cout << "\tÓñïåõ! " << std::endl;
+	std::cout << "\tÐ£ÑÐ¿ÐµÑ…! " << std::endl;
 	
-	std::cout << " Ñîõðàíåíèå ôàéëà ñ ãëóáèíîé öâåòà 8 áèò ... ";
+	std::cout << " Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ñ„Ð°Ð¹Ð»Ð° Ñ Ð³Ð»ÑƒÐ±Ð¸Ð½Ð¾Ð¹ Ñ†Ð²ÐµÑ‚Ð° 8 Ð±Ð¸Ñ‚ ... ";
 	image_8.writeimage((char*)"sample_8.bmp");
-	std::cout << "\tÓñïåõ! " << std::endl;
+	std::cout << "\tÐ£ÑÐ¿ÐµÑ…! " << std::endl;
 
-	std::cout << " Ñîõðàíåíèå óìåíüøåííîãî èçîáðàæåíèÿ ...";
+	std::cout << " Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ ÑƒÐ¼ÐµÐ½ÑŒÑˆÐµÐ½Ð½Ð¾Ð³Ð¾ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ ...";
 	image_reduced->writeimage((char*)"sample_r.bmp");
-	std::cout << "\tÓñïåõ! " << std::endl;
+	std::cout << "\tÐ£ÑÐ¿ÐµÑ…! " << std::endl;
 	
-	std::cout << " Ñîõðàíåíèå óìåíüøåííîãî èçîáðàæåíèÿ ...";
+	std::cout << " Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ ÑƒÐ¼ÐµÐ½ÑŒÑˆÐµÐ½Ð½Ð¾Ð³Ð¾ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ ...";
 	image_increased->writeimage((char*)"sample_i.bmp");
-	std::cout << "\tÓñïåõ! " << std::endl;
+	std::cout << "\tÐ£ÑÐ¿ÐµÑ…! " << std::endl;
 
-	std::cout << " Êîíâåðòàöèÿ ïðîøëà óñïåøíî. " << std::endl;
+	std::cout << " ÐšÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° ÑƒÑÐ¿ÐµÑˆÐ½Ð¾. " << std::endl;
 	system("pause");
 	return 0;
 }

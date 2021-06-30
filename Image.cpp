@@ -4,26 +4,26 @@
 #include <fstream>
 using namespace std;
 
-// Реализация конструктора без параметров
+// Р РµР°Р»РёР·Р°С†РёСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 Image::Image()
 {
-	setEmptyImageParams(); // Заполняем параметры пустого изображения
+	setEmptyImageParams(); // Р—Р°РїРѕР»РЅСЏРµРј РїР°СЂР°РјРµС‚СЂС‹ РїСѓСЃС‚РѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
 }
 
 /** 
-* Реализация конструктора при загрузке из файла
-* @param char* fileName: путь к файлу
+* Р РµР°Р»РёР·Р°С†РёСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїСЂРё Р·Р°РіСЂСѓР·РєРµ РёР· С„Р°Р№Р»Р°
+* @param char* fileName: РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ
 */
 Image::Image(char* fileName)
 {
-	setEmptyImageParams(); // Заполняем параметры пустого изображения
-	loadimage(fileName); // выполняем загрузку из файла с переданным именем
+	setEmptyImageParams(); // Р—Р°РїРѕР»РЅСЏРµРј РїР°СЂР°РјРµС‚СЂС‹ РїСѓСЃС‚РѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
+	loadimage(fileName); // РІС‹РїРѕР»РЅСЏРµРј Р·Р°РіСЂСѓР·РєСѓ РёР· С„Р°Р№Р»Р° СЃ РїРµСЂРµРґР°РЅРЅС‹Рј РёРјРµРЅРµРј
 }
 
 /**
-* Реализация конструктора при при копировании данных
-* из другого изображения
-* @param const Image& im -  Изображение
+* Р РµР°Р»РёР·Р°С†РёСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїСЂРё РїСЂРё РєРѕРїРёСЂРѕРІР°РЅРёРё РґР°РЅРЅС‹С…
+* РёР· РґСЂСѓРіРѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
+* @param const Image& im -  РР·РѕР±СЂР°Р¶РµРЅРёРµ
 */
 Image::Image(const Image& im)
 {
@@ -33,12 +33,12 @@ Image::Image(const Image& im)
 }
 
 /**
-* Реализация конструктора при при копировании данных
-* из другого изображения
-* @param char Mode -  Режим
-* @param unsigned short BCount -  Битовая глубина
-* @param int Width -  Ширина
-* @param int Height -  Высота
+* Р РµР°Р»РёР·Р°С†РёСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїСЂРё РїСЂРё РєРѕРїРёСЂРѕРІР°РЅРёРё РґР°РЅРЅС‹С…
+* РёР· РґСЂСѓРіРѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
+* @param char Mode -  Р РµР¶РёРј
+* @param unsigned short BCount -  Р‘РёС‚РѕРІР°СЏ РіР»СѓР±РёРЅР°
+* @param int Width -  РЁРёСЂРёРЅР°
+* @param int Height -  Р’С‹СЃРѕС‚Р°
 */
 Image::Image(char Mode, unsigned short BCount, int Width, int Height)
 {
@@ -71,10 +71,10 @@ Image::Image(char Mode, unsigned short BCount, int Width, int Height)
 			}
 		}
 	}
-	else cout << "Ошибка: создание изображения битностью 16 не поддерживается"  << endl;
+	else cout << "РћС€РёР±РєР°: СЃРѕР·РґР°РЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ Р±РёС‚РЅРѕСЃС‚СЊСЋ 16 РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ"  << endl;
 }
 
-// Реализация деструктора
+// Р РµР°Р»РёР·Р°С†РёСЏ РґРµСЃС‚СЂСѓРєС‚РѕСЂР°
 Image::~Image()
 {
 	if (Rgbtriple)
@@ -90,14 +90,14 @@ Image::~Image()
 }
 
 /**
-* Метод загрузки изображения "вручную"
-* @param char* fileName: путь к файлу
+* РњРµС‚РѕРґ Р·Р°РіСЂСѓР·РєРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏ "РІСЂСѓС‡РЅСѓСЋ"
+* @param char* fileName: РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ
 */
 int Image::loadimage(char* fileName)
 {
 	if (Rgbtriple || Rgbquad)
 	{
-		cout << "Ошибка: нельзя загружать данные в уже созданное изображение\n" << endl;
+		cout << "РћС€РёР±РєР°: РЅРµР»СЊР·СЏ Р·Р°РіСЂСѓР¶Р°С‚СЊ РґР°РЅРЅС‹Рµ РІ СѓР¶Рµ СЃРѕР·РґР°РЅРЅРѕРµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ\n" << endl;
 		return 0;
 	}
 
@@ -106,7 +106,7 @@ int Image::loadimage(char* fileName)
 		
 	if (!file.is_open())
 	{
-		cout << " Ошибка: не удалось прочитать файл "<< fileName << endl;
+		cout << " РћС€РёР±РєР°: РЅРµ СѓРґР°Р»РѕСЃСЊ РїСЂРѕС‡РёС‚Р°С‚СЊ С„Р°Р№Р» "<< fileName << endl;
 		return 0;
 	}
 
@@ -119,7 +119,7 @@ int Image::loadimage(char* fileName)
 
 	if (BMInfoHeader.BitCount != 24 && BMInfoHeader.BitCount != 32)
 	{
-		cout << " Ошибка: неподдерживаемая битность изображения: '%i'\n" << (int)BMInfoHeader.BitCount << endl;
+		cout << " РћС€РёР±РєР°: РЅРµРїРѕРґРґРµСЂР¶РёРІР°РµРјР°СЏ Р±РёС‚РЅРѕСЃС‚СЊ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ: '%i'\n" << (int)BMInfoHeader.BitCount << endl;
 		return 0;
 	}
 
@@ -164,7 +164,7 @@ int Image::loadimage(char* fileName)
 }
 
 
-// Заполняем необходимые поля информации об изображении
+// Р—Р°РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїРѕР»СЏ РёРЅС„РѕСЂРјР°С†РёРё РѕР± РёР·РѕР±СЂР°Р¶РµРЅРёРё
 void Image::setHeaderAndAllocateMemory(int Width, int Height, int BitCount)
 {
 	BMInfoHeader.Width = Width;
@@ -175,7 +175,7 @@ void Image::setHeaderAndAllocateMemory(int Width, int Height, int BitCount)
 
 	if (BMInfoHeader.BitCount <= 8)
 	{
-		BMInfoHeader.ColorUsed = 1 << BMInfoHeader.BitCount; // степень двойки
+		BMInfoHeader.ColorUsed = 1 << BMInfoHeader.BitCount; // СЃС‚РµРїРµРЅСЊ РґРІРѕР№РєРё
 		Palette = new RGBQUAD[BMInfoHeader.ColorUsed];
 		for (int i = 0; i < (int)BMInfoHeader.ColorUsed; i++)
 		{
@@ -202,8 +202,8 @@ void Image::setHeaderAndAllocateMemory(int Width, int Height, int BitCount)
 	};
 }
 
-// Бинарным поиском ищет ближайший цвет в палитре (так как она упорядочена по возрастанию оттенков серого)
-// В данном случае невозможен проход циклами так как невозможно вычислить размер Palette
+// Р‘РёРЅР°СЂРЅС‹Рј РїРѕРёСЃРєРѕРј РёС‰РµС‚ Р±Р»РёР¶Р°Р№С€РёР№ С†РІРµС‚ РІ РїР°Р»РёС‚СЂРµ (С‚Р°Рє РєР°Рє РѕРЅР° СѓРїРѕСЂСЏРґРѕС‡РµРЅР° РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ РѕС‚С‚РµРЅРєРѕРІ СЃРµСЂРѕРіРѕ)
+// Р’ РґР°РЅРЅРѕРј СЃР»СѓС‡Р°Рµ РЅРµРІРѕР·РјРѕР¶РµРЅ РїСЂРѕС…РѕРґ С†РёРєР»Р°РјРё С‚Р°Рє РєР°Рє РЅРµРІРѕР·РјРѕР¶РЅРѕ РІС‹С‡РёСЃР»РёС‚СЊ СЂР°Р·РјРµСЂ Palette
 unsigned char Image :: getNearestPaletteColorIndex(unsigned char grayscaleColor) 
 {
 	int minIndex = 0;
@@ -227,7 +227,7 @@ unsigned char Image :: getNearestPaletteColorIndex(unsigned char grayscaleColor)
 }
 
 
-// Вычисляет градацию серого для переданного цвета
+// Р’С‹С‡РёСЃР»СЏРµС‚ РіСЂР°РґР°С†РёСЋ СЃРµСЂРѕРіРѕ РґР»СЏ РїРµСЂРµРґР°РЅРЅРѕРіРѕ С†РІРµС‚Р°
 unsigned char Image::getGrayscaleColor(unsigned char Red, unsigned char Green, unsigned char Blue) 
 {
 	int result = (int)(Red * 0.299 + Green * 0.597 + Blue * 0.114);
@@ -235,27 +235,27 @@ unsigned char Image::getGrayscaleColor(unsigned char Red, unsigned char Green, u
 	return (unsigned char)result;
 }
 
-// Возвращает полный размер данных при записи в файл
+// Р’РѕР·РІСЂР°С‰Р°РµС‚ РїРѕР»РЅС‹Р№ СЂР°Р·РјРµСЂ РґР°РЅРЅС‹С… РїСЂРё Р·Р°РїРёСЃРё РІ С„Р°Р№Р»
 int Image::getTotalImageSize(int Width, int Height, unsigned short BitCount) 
 {
 	return (getImageRowSize(BMInfoHeader.Width, BMInfoHeader.BitCount) + getAdditionalRowOffsetInFile(Width, BitCount)) * Height;
 }
 
-// Возвращает сколько байт требуется для записи строки изображения в файл
+// Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃРєРѕР»СЊРєРѕ Р±Р°Р№С‚ С‚СЂРµР±СѓРµС‚СЃСЏ РґР»СЏ Р·Р°РїРёСЃРё СЃС‚СЂРѕРєРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РІ С„Р°Р№Р»
 int Image::getImageRowSize(int Width, unsigned short BitCount) 
 {
 	return (Width * BitCount + 7) / 8;
 }
 
-// Считает сколько нужно дописывать в файл байт после записи строки изображения,
-// чтобы получить размер строки кратным 4
+// РЎС‡РёС‚Р°РµС‚ СЃРєРѕР»СЊРєРѕ РЅСѓР¶РЅРѕ РґРѕРїРёСЃС‹РІР°С‚СЊ РІ С„Р°Р№Р» Р±Р°Р№С‚ РїРѕСЃР»Рµ Р·Р°РїРёСЃРё СЃС‚СЂРѕРєРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏ,
+// С‡С‚РѕР±С‹ РїРѕР»СѓС‡РёС‚СЊ СЂР°Р·РјРµСЂ СЃС‚СЂРѕРєРё РєСЂР°С‚РЅС‹Рј 4
 int Image::getAdditionalRowOffsetInFile(int Width, unsigned short BitCount)  
 {
 	int remainder = getImageRowSize(Width, BitCount) % 4;
 	return remainder ? 4 - remainder : 0;
 }
 
-// Выставление параметров, соответствующих пустому изображению
+// Р’С‹СЃС‚Р°РІР»РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ, СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёС… РїСѓСЃС‚РѕРјСѓ РёР·РѕР±СЂР°Р¶РµРЅРёСЋ
 void Image::setEmptyImageParams()
 {
 	Rgbtriple = NULL;
@@ -274,26 +274,26 @@ void Image::setEmptyImageParams()
 	BMInfoHeader.ColorImportant = 0;
 }
 
-// Копируем данные изображения
+// РљРѕРїРёСЂСѓРµРј РґР°РЅРЅС‹Рµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
 void Image::copyDataFromImage(const Image& Inp)
 {
 	if (BMInfoHeader.Width == Inp.BMInfoHeader.Width &&
 		BMInfoHeader.Height == Inp.BMInfoHeader.Height &&
 		BMInfoHeader.BitCount == Inp.BMInfoHeader.BitCount)
-		// Копирование данных через memcpy
+		// РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… С‡РµСЂРµР· memcpy
 		memcpy(Rgbtriple, Inp.Rgbtriple, BMInfoHeader.Height * BMInfoHeader.Width * sizeof(RGBTRIPLE));
-	else cout << "Ошибка: в изображение уже проинициализированно другим разрешением и/или битностью" << endl;
+	else cout << "РћС€РёР±РєР°: РІ РёР·РѕР±СЂР°Р¶РµРЅРёРµ СѓР¶Рµ РїСЂРѕРёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅРѕ РґСЂСѓРіРёРј СЂР°Р·СЂРµС€РµРЅРёРµРј Рё/РёР»Рё Р±РёС‚РЅРѕСЃС‚СЊСЋ" << endl;
 }
 
 /**
-* Сохранение изображения в файл
-* @param char* fileName: название выходного файла
+* РЎРѕС…СЂР°РЅРµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РІ С„Р°Р№Р»
+* @param char* fileName: РЅР°Р·РІР°РЅРёРµ РІС‹С…РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р°
 */
 void Image::writeimage(char* fileName) 
 {
 	/*if (!Rgbtriple  || !Rgbquad)
 	{
-		cout << "Ошибка: в изображении нет данных для сохранения" << endl;
+		cout << "РћС€РёР±РєР°: РІ РёР·РѕР±СЂР°Р¶РµРЅРёРё РЅРµС‚ РґР°РЅРЅС‹С… РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ" << endl;
 		return;
 	}*/
 	ofstream fileout;
@@ -386,7 +386,7 @@ void Image::writeimage(char* fileName)
 	fileout.close();
 }
 
-// Перегрузка оператора =
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° =
 Image& Image::operator = (const Image& Inp) 
 {
 	if (Rgbtriple) copyDataFromImage(Inp);
@@ -398,7 +398,7 @@ Image& Image::operator = (const Image& Inp)
 	return *this;
 }
 
-// Функция преобразования данных переданного изображения в текущий формат
+// Р¤СѓРЅРєС†РёСЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ РґР°РЅРЅС‹С… РїРµСЂРµРґР°РЅРЅРѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РІ С‚РµРєСѓС‰РёР№ С„РѕСЂРјР°С‚
 void Image::copyAndConvertDataFromImage(const Image& Inp)
 {
 	const bool isSourceWithPalette = Inp.Palette != NULL;
@@ -428,7 +428,7 @@ void Image::copyAndConvertDataFromImage(const Image& Inp)
 	}
 }
 
-// Перегрузка оператора /
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° /
 Image Image::operator / (short Depth) 
 {
 	if ((Depth == 8 || Depth == 4 || Depth == 1) && Depth <= BMInfoHeader.BitCount)
@@ -438,17 +438,17 @@ Image Image::operator / (short Depth)
 		return result;
 	}
 	else {
-		cout << " Ошибка: неподдерживаемая битность" << endl;
+		cout << " РћС€РёР±РєР°: РЅРµРїРѕРґРґРµСЂР¶РёРІР°РµРјР°СЏ Р±РёС‚РЅРѕСЃС‚СЊ" << endl;
 		return Image(*this);
 	}
 }
 
-// Перегрузка оператора /=
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° /=
 Image& Image::operator /= (const Image& Inp) 
 {
 	if (BMInfoHeader.BitCount != Inp.BMInfoHeader.BitCount)
 	{
-		cout<< " Ошибка: разная битность изображений, получение изображения с новым размером невозможно"<< endl;
+		cout<< " РћС€РёР±РєР°: СЂР°Р·РЅР°СЏ Р±РёС‚РЅРѕСЃС‚СЊ РёР·РѕР±СЂР°Р¶РµРЅРёР№, РїРѕР»СѓС‡РµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ СЃ РЅРѕРІС‹Рј СЂР°Р·РјРµСЂРѕРј РЅРµРІРѕР·РјРѕР¶РЅРѕ"<< endl;
 		return *this;
 	}
 

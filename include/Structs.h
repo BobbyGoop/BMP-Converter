@@ -2,11 +2,11 @@
 #pragma pack(push,1)
 struct BITMAPFILEHEADER
 {
-	unsigned short Type; // ‘BM’ 0x4D42
-	unsigned long Size; // Размер файла в байтах, BitCount*Height*Width+ OffsetBits
-	unsigned short Reserved1; // Зарезервирован; должен быть нуль
-	unsigned short Reserved2; // Зарезервирован; должен быть нуль
-	unsigned long OffsetBits; // Смещение данных от начала файла в байтах
+	unsigned short Type; // вЂBMвЂ™ 0x4D42
+	unsigned long Size; // Р Р°Р·РјРµСЂ С„Р°Р№Р»Р° РІ Р±Р°Р№С‚Р°С…, BitCount*Height*Width+ OffsetBits
+	unsigned short Reserved1; // Р—Р°СЂРµР·РµСЂРІРёСЂРѕРІР°РЅ; РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РЅСѓР»СЊ
+	unsigned short Reserved2; // Р—Р°СЂРµР·РµСЂРІРёСЂРѕРІР°РЅ; РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РЅСѓР»СЊ
+	unsigned long OffsetBits; // РЎРјРµС‰РµРЅРёРµ РґР°РЅРЅС‹С… РѕС‚ РЅР°С‡Р°Р»Р° С„Р°Р№Р»Р° РІ Р±Р°Р№С‚Р°С…
 
 	// = sizeof(BITMAPFILEHEADER)+sizeof(BITMAPINFOHEADER)
 };
@@ -15,17 +15,17 @@ struct BITMAPFILEHEADER
 #pragma pack(push,1)
 struct BITMAPINFOHEADER
 {
-	unsigned long Size; // Число байтов необходимое для структуры = 40
-	unsigned long Width; // Ширина точечного рисунка в пикселях
-	unsigned long Height; // Высота точечного рисунка в пикселях
-	unsigned short Planes; // Число плоскостей целевого устройства = 1
-	unsigned short BitCount; // Глубина цвета, число бит на точку = 0,1,4,8,16,24,32
-	unsigned long Compression; // Тип сжатия = 0 для несжатого изображения
-	unsigned long SizeImage; // Размер изображения в байтах BitCount*Height*Width
-	unsigned long XPelsPerMeter; // Разрешающая способность по горизонтали
-	unsigned long YPelsPerMeter; // Разрешающая способность по вертикали
-	unsigned long ColorUsed; // Число индексов используемых цветов. Если все цвета = 0
-	unsigned long ColorImportant; // Число необходимых цветов = 0
+	unsigned long Size; // Р§РёСЃР»Рѕ Р±Р°Р№С‚РѕРІ РЅРµРѕР±С…РѕРґРёРјРѕРµ РґР»СЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ = 40
+	unsigned long Width; // РЁРёСЂРёРЅР° С‚РѕС‡РµС‡РЅРѕРіРѕ СЂРёСЃСѓРЅРєР° РІ РїРёРєСЃРµР»СЏС…
+	unsigned long Height; // Р’С‹СЃРѕС‚Р° С‚РѕС‡РµС‡РЅРѕРіРѕ СЂРёСЃСѓРЅРєР° РІ РїРёРєСЃРµР»СЏС…
+	unsigned short Planes; // Р§РёСЃР»Рѕ РїР»РѕСЃРєРѕСЃС‚РµР№ С†РµР»РµРІРѕРіРѕ СѓСЃС‚СЂРѕР№СЃС‚РІР° = 1
+	unsigned short BitCount; // Р“Р»СѓР±РёРЅР° С†РІРµС‚Р°, С‡РёСЃР»Рѕ Р±РёС‚ РЅР° С‚РѕС‡РєСѓ = 0,1,4,8,16,24,32
+	unsigned long Compression; // РўРёРї СЃР¶Р°С‚РёСЏ = 0 РґР»СЏ РЅРµСЃР¶Р°С‚РѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
+	unsigned long SizeImage; // Р Р°Р·РјРµСЂ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РІ Р±Р°Р№С‚Р°С… BitCount*Height*Width
+	unsigned long XPelsPerMeter; // Р Р°Р·СЂРµС€Р°СЋС‰Р°СЏ СЃРїРѕСЃРѕР±РЅРѕСЃС‚СЊ РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё
+	unsigned long YPelsPerMeter; // Р Р°Р·СЂРµС€Р°СЋС‰Р°СЏ СЃРїРѕСЃРѕР±РЅРѕСЃС‚СЊ РїРѕ РІРµСЂС‚РёРєР°Р»Рё
+	unsigned long ColorUsed; // Р§РёСЃР»Рѕ РёРЅРґРµРєСЃРѕРІ РёСЃРїРѕР»СЊР·СѓРµРјС‹С… С†РІРµС‚РѕРІ. Р•СЃР»Рё РІСЃРµ С†РІРµС‚Р° = 0
+	unsigned long ColorImportant; // Р§РёСЃР»Рѕ РЅРµРѕР±С…РѕРґРёРјС‹С… С†РІРµС‚РѕРІ = 0
 };
 #pragma pack(pop)
 
